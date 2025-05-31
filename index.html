@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Booking Form</title>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Booking Form</title>
+  <style>
+    /* Travel-themed background */
+    body {
+      background-image: url('https://images.unsplash.com/photo-1502920917128-1aa500764ce7');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    /* Form container */
+    form {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 700px;
+      margin: auto;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+
+    /* Attractive headings */
+    h1 {
+      font-family: 'Georgia', serif;
+      color: #2c3e50;
+      font-size: 28px;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 5px;
+    }
+
+    h2 {
+      font-family: 'Lucida Handwriting', cursive;
+      color: #d35400;
+      font-size: 24px;
+      border-bottom: 2px dashed #e67e22;
+      padding-bottom: 5px;
+    }
+
+    h3 {
+      font-family: 'Trebuchet MS', sans-serif;
+      color: #16a085;
+      font-size: 20px;
+      margin-top: 20px;
+    }
+
+    /* Section background styling */
+    #personal-info,
+    #travel-details,
+    #accommodation,
+    #payment-section {
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+
+    #personal-info {
+      background-color: #f9f9f9;
+    }
+
+    #travel-details {
+      background-color: #e8f8f5;
+    }
+
+    #accommodation {
+      background-color: #fef5e7;
+    }
+
+    #payment-section {
+      background-color: #f4ecf7;
+    }
+
+    /* Inputs and selects */
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="date"],
+    select {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0 15px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    /* Button */
+    #button {
+      background-color: #2980b9;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    #button:hover {
+      background-color: #1f618d;
+    }
+  </style>
+</head>
+<body>
+
+  <form action="/vac.php">
+
+    <!-- Personal Info -->
+    <div id="personal-info">
+      <h1>Personal Information</h1>
+      <label for="Full-name">Full Name</label>
+      <input type="text" id="Full-name" required><br>
+
+      <label for="Email">Email</label>
+      <input type="email" id="Email" required><br>
+
+      <label for="Number">Phone-No.</label>
+      <input type="tel" id="Number" required><br>
+
+      <label for="Nationality">Nationality</label>
+      <input type="text" id="Nationality" required><br>
+    </div>
+
+    <!-- Travel Details -->
+    <div id="travel-details">
+      <h1>Travel Related Details</h1>
+
+      <label for="destination">Select your Destination</label>
+      <select id="destination" required>
+        <option value="">Select Your Destination</option>
+        <option value="Rajasthan">Rajasthan</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Chennai">Chennai</option>
+        <option value="Uttarakhand">Uttarakhand</option>
+        <option value="Meghalaya">Meghalaya</option>
+      </select><br>
+
+      <label for="departure-city">Departure City/Airport/Station</label>
+      <input type="text" id="departure-city" required placeholder="e.g. Mumbai International Airport"><br>
+
+      <label for="Departure-date">Departure date</label>
+      <input type="date" id="Departure-date" required><br>
+
+      <label for="return-Date">Return Date</label>
+      <input type="date" id="return-Date" required><br>
+
+      <fieldset>
+        <legend>Number of Travelers</legend>
+        <label for="Adults">Adults</label>
+        <input type="number" id="Adults" max="10" min="1"><br>
+
+        <label for="Child">Child</label>
+        <input type="number" id="Child" max="10" min="0"><br>
+      </fieldset>
+    </div>
+
+    <!-- Accommodation -->
+    <div id="accommodation">
+      <h2>Accommodation Preferences</h2>
+      <label for="Hotel">Hotel to stay</label>
+      <select id="Hotel">
+        <option value="">Select Hotel</option>
+        <option value="5-star">5-star</option>
+        <option value="4-star">4-star</option>
+        <option value="3-star">3-star</option>
+        <option value="2-star">2-star</option>
+        <option value="Lower">Lower</option>
+      </select>
+
+      <h3>Additional Services</h3>
+      <input type="radio" id="pick-up" name="additional">
+      <label for="pick-up">Airport pickup</label><br>
+
+      <input type="radio" id="meals" name="additional">
+      <label for="meals">Meals-included</label><br>
+
+      <input type="radio" id="Guided-tours" name="additional">
+      <label for="Guided-tours">Guided tours</label><br>
+    </div>
+
+    <!-- Payment -->
+    <div id="payment-section">
+      <h3>Payment Section</h3>
+      <label for="payment">Payment Method</label>
+      <select id="payment" required>
+        <option value="">Select Payment Method</option>
+        <option value="UPI">UPI</option>
+        <option value="Net-banking">Net banking</option>
+      </select><br>
+
+      <input type="checkbox" id="terms" required>
+      <label for="terms">I accept the terms and conditions applied</label><br>
+
+      <button id="button">Submit</button>
+    </div>
+
+  </form>
+
+</body>
+</html>
+
